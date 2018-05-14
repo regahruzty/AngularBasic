@@ -7,14 +7,23 @@
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  <li *ngFor="let aBook of books">
+    <span *ngIf="aBook == 'Java'">This is my favorite programming language : </span>
+      {{aBook.name}} - {{aBook.tahunTerbit}}
   </li>
 </ul>
+
+<form #bookForm="ngForm" (ngSubmit)="kirimData(bookForm)">
+  <div>
+    <label for="buku">Buku</label>
+    <input type="text" name="buku" id="buku" [(ngModel)]="book.name">
+  </div>
+  <div>
+      <label for="tahunTerbit">Tahun Terbit</label>
+      <input type="number" name="tahunTerbit" id="tahunTerbit" [(ngModel)]="book.tahunTerbit">
+    </div>
+  <div>
+    <button type="submit" >Kirim</button>    
+  </div>
+</form>
 
