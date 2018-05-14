@@ -1,0 +1,6 @@
+<h3>Ini Master File</h3>
+<hr>
+<ol>
+  <app-detail (submited)="getData($event)">  </app-detail>
+  <app-list *ngFor="let val of data" [val]="val" [index]="title"></app-list>
+</ol>

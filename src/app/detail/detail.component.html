@@ -1,3 +1,14 @@
-<p>
-  detail works!
-</p>
+<form #formTag="ngForm" (ngSubmit)="kirimData(formTag)"> 
+    <div>
+        <label for="id">Kode</label>
+        <input type="number" name="id" id="id" [(ngModel)]="data.id" >
+    </div>
+    <div>
+        <label for="tag">Nama Tag</label>
+        <input type="text" name="tag" id="tag" [(ngModel)]="data.tag">
+    </div>
+    <div>
+        <button type="submit">Kirim</button>
+    </div>
+</form>
+
